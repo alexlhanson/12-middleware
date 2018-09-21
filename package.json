@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "nodemon index.js",
+    "debug": "DEBUG=express:router nodemon index.js",
     "test": "jest --watchAll"
   },
   "jest": {
