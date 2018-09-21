@@ -1,0 +1,38 @@
+{
+  "name": "12-middleware",
+  "version": "1.0.0",
+  "description": "Middleware excercise for express",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon index.js",
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bend-javascript-401d1-lab/12-middleware.git"
+  },
+  "author": "Alex Hanson <alexlhanson@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bend-javascript-401d1-lab/12-middleware/issues"
+  },
+  "homepage": "https://github.com/bend-javascript-401d1-lab/12-middleware#readme",
+  "dependencies": {
+    "babel-env": "^2.4.1",
+    "babel-eslint": "^9.0.0",
+    "babel-register": "^6.26.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "require-dir": "^1.0.0"
+  },
+  "devDependencies": {
+    "debug": "^4.0.1",
+    "jest": "^23.6.0",
+    "morgan": "^1.9.1"
+  }
+}
