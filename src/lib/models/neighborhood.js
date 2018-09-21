@@ -18,7 +18,6 @@ class Neighborhood{
   save(){
     return storage.save(this);
   }
-
 }
 
 export default Neighborhood;

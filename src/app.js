@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended:true}));
 import router from './lib/api/api'; 
 import errHandler from './lib/api/err-handler';
 
-// app.use(router);
+app.use(router);
 // app.use(errHandler);
 
 //module export uses ES5 because of compatibility issues
