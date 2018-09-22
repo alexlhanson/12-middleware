@@ -10,10 +10,11 @@ const router = express.Router();
 import modelFinder from '../middleware/modelFinder';
 router.param('model', modelFinder);
 
-router.post('api/v1/:model', (req, res, next) => {
+router.post('/api/v1/:model', (req, res, next) => {
+  console.log(req.body);
   let record = new req.model(req.body);
   record.save()
-    .then(res.status(200).json(res))
+    .then(data => res.status(200).json(data).end())
     .catch(next);
 });
 
