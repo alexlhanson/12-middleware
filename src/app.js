@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended:true}));
 
 //endpoint middleware
 import router from './lib/api/api'; 
-// import errHandler from './lib/api/err-handler';
+import badRequest from './lib/api/bad-request';
 
 app.use(router);
-// app.use(errHandler);
+app.use(badRequest);
 
 //module export uses ES5 because of compatibility issues
 module.exports = app;
