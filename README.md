@@ -4,6 +4,7 @@ For this lab an HTTP server was created for doing CRUD requests.  The lab also r
 ## Setup Instructions
 - 1) Fork and/or clone this repository.  
 - 2) Use `npm install` in the directory of the cloned repository.
-- 3) In CLI use `npm run watch`
-- 4) Use postman or other service to try sending or manipulating data files.
+- 3) Create .env file in root directory and add `PORT=3000` and `STORAGE=filesystem`
+- 4) In CLI use `npm run watch`
+- 5) Use postman or other service to try sending or manipulating data files.
 
