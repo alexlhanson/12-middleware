@@ -1,14 +1,13 @@
 'use strict';
 
 const storage = {};
-const databaseDir = `${__dirname}/data/`;
+const databaseDir = `${__dirname}/data`;
 
 import fs from 'fs';
 
 storage.save = data => {
-  return new Promise ((resolve, reject) => {
-    if(!data.id){reject('Error: No data id provided');}
-    console.log(data);
+  return new Promise((resolve, reject) => {
+    if (!data.id) { reject('Error: No data id provided'); }
 
     let file = `${databaseDir}/${data.id}`;
     let text = JSON.stringify(data);
@@ -19,4 +18,30 @@ storage.save = data => {
   });
 };
 
-export default storage;
+storage.fetchOne = (id) => {
+  return new Promise((resolve, reject) => {
+    if (!id) { reject('Error: No id provided'); }
+    let file = `${databaseDir}/${id}`;
+
+    fs.readFile(file, (err, data) => {
+      if (err) reject('Error: file not read');
+      resolve(JSON.parse(data.toString()));
+    });
+  });
+};
+
+storage.delete = (id) => {
+  return new Promise((resolve, reject) => {
+    if (!id) { reject('Error: No id provided'); }
+    let file = `${databaseDir}/${id}`;
+
+    fs.unlink(file, (err) => {
+      if (err) reject('Error: file not deleted');
+      resolve('success');
+    });
+  });
+};
+
+  // storage.update = (id)
+
+  export default storage;

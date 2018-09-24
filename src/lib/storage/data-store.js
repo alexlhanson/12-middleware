@@ -1,6 +1,6 @@
 'use strict';
 
-// import memory from '../storage/memory.js';
+import memory from '../storage/memory.js';
 import filesystem from '../storage/filesystem.js';
 
 let dataStorageModule = {};

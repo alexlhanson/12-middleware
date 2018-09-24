@@ -18,6 +18,18 @@ class Neighborhood{
   save(){
     return storage.save(this);
   }
+
+  static fetchOne(id){
+    return storage.fetchOne(id);
+  }
+
+  static delete(id){
+    return storage.delete(id);
+  }
+
+  static update(data){
+    return storage.update(data);
+  }
 }
 
 export default Neighborhood;

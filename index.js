@@ -4,7 +4,9 @@
 require('dotenv').config();
 
 //start babel
-require('babel-register');
+require('babel-register')({
+  presets: ['env'],
+});
 
 //start server
 const app = require('./src/app');
