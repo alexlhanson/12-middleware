@@ -42,6 +42,28 @@ storage.delete = (id) => {
   });
 };
 
-  // storage.update = (id)
+storage.update = (update, data) => {
+  return new Promise((resolve, reject) => {
+    let dataKeys = Object.keys(update);
+    let file = `${databaseDir}/${data.id}`;
+    
+    dataKeys.forEach(key => {
+      if (data[key]) {
+        data[key] = update[key];
+      }
+    });
+    
+    let text = JSON.stringify(data);
+    
+    fs.unlink(file, (err) => {
+      if (err) reject ('ERROR: file not rewritten');
+    });
+    
+    fs.writeFile(file, text, (err => {
+      if (err) reject('Error: Not writing to file');
+      resolve(data);
+    }));
+  });
+};
 
-  export default storage;
+export default storage;

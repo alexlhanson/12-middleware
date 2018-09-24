@@ -27,8 +27,8 @@ class Neighborhood{
     return storage.delete(id);
   }
 
-  static update(data){
-    return storage.update(data);
+  static update(update, data){
+    return storage.update(update, data);
   }
 }
 

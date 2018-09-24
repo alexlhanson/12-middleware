@@ -10,8 +10,8 @@ import cors from 'cors';
 let app = express();
 
 //middleware chain
-// app.use(cors);
-// app.use(morgan('dev'));
+app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended:true}));
 
